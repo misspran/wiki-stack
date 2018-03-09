@@ -1,0 +1,28 @@
+{
+  "name": "wikistack",
+  "version": "1.0.0",
+  "description": "wiki app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e html,js,css ./path/to/your/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misspran/wiki-stack.git"
+  },
+  "author": "Ricky & Vi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misspran/wiki-stack/issues"
+  },
+  "homepage": "https://github.com/misspran/wiki-stack#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "morgan": "^1.9.0",
+    "nunjucks": "^3.1.2",
+    "pg": "^6.4.2",
+    "sequelize": "^4.35.2"
+  }
+}
