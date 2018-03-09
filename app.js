@@ -7,8 +7,8 @@ var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-
-// point nunjucks to the directory containing templates and turn off caching; configure returns an Environment 
+//this is a test
+// point nunjucks to the directory containing templates and turn off caching; configure returns an Environment
 // instance, which we'll want to use to add Markdown support later.
 const env = nunjucks.configure('views', {noCache: true});
 // have res.render work with html files
