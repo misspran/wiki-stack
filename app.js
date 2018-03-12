@@ -6,6 +6,9 @@ var nunjucks = require('nunjucks');
 var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
+const models = require('./models');
+//const userRouter = require('./user');
+const routes = require('./routes')
 
 
 // point nunjucks to the directory containing templates and turn off caching; configure returns an Environment 
@@ -17,6 +20,13 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 
+app.use('/', routes);
 
-
-app.listen(3000, function(){console.log("listeninggg from 3000")})
+models.db.sync({force: true})
+.then(function () {
+    console.log('All tables created!');
+    app.listen(3000, function () {
+        console.log('Server is listening on port 3000!');
+    });
+})
+.catch(console.error.bind(console));
