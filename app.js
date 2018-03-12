@@ -20,7 +20,7 @@ const env = nunjucks.configure('views', {noCache: true});
 app.set('view engine', 'html');
 // when res.render works with html files, have it use nunjucks to do so
 app.engine('html', nunjucks.render);
-
+app.use(bodyParser());
 app.use('/', routes);
 
 models.db.sync({force: true})
@@ -31,3 +31,5 @@ models.db.sync({force: true})
     });
 })
 .catch(console.error.bind(console));
+
+
