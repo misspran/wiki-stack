@@ -11,7 +11,9 @@ const models = require('./models');
 const routes = require('./routes')
 
 
-// point nunjucks to the directory containing templates and turn off caching; configure returns an Environment 
+
+//this is a test
+// point nunjucks to the directory containing templates and turn off caching; configure returns an Environment
 // instance, which we'll want to use to add Markdown support later.
 const env = nunjucks.configure('views', {noCache: true});
 // have res.render work with html files
@@ -19,9 +21,18 @@ app.set('view engine', 'html');
 // when res.render works with html files, have it use nunjucks to do so
 app.engine('html', nunjucks.render);
 
+// Where your server and express app are being defined:
+
+const models = require('./models');
+const routes = require('./routes');
 
 app.use('/', routes);
 
+<<<<<<< HEAD
+=======
+// ... other stuff
+
+>>>>>>> cd722e20336fb1cb7f4fea5ecfaf1e2da7faa199
 models.db.sync({force: true})
 .then(function () {
     console.log('All tables created!');
