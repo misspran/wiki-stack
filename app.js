@@ -21,11 +21,6 @@ app.set('view engine', 'html');
 // when res.render works with html files, have it use nunjucks to do so
 app.engine('html', nunjucks.render);
 
-// Where your server and express app are being defined:
-
-const models = require('./models');
-const routes = require('./routes');
-
 app.use('/', routes);
 
 models.db.sync({force: true})
