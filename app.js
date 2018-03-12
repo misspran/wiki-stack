@@ -28,11 +28,6 @@ const routes = require('./routes');
 
 app.use('/', routes);
 
-<<<<<<< HEAD
-=======
-// ... other stuff
-
->>>>>>> cd722e20336fb1cb7f4fea5ecfaf1e2da7faa199
 models.db.sync({force: true})
 .then(function () {
     console.log('All tables created!');
